@@ -32,4 +32,4 @@ Show the version of the utility.
 
 ## License
 
-`up` is made available under the terms of either the MIT License or the Apache License 2.0, at your option.
+`up` is made available under the terms of the MIT License. See [LICENSE](LICENSE.md) for details.
