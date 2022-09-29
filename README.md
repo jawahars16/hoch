@@ -14,7 +14,7 @@
 
 ### interval
 
-Configure the interval between each poll. Default is 1 second.
+Configure the interval between each poll. Unit is in seconds. Default is 1 second.
 
 ```-i, --interval <interval>```
 

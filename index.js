@@ -57,7 +57,15 @@ const buildOutputTable = (res, err) => {
 const argv = yargs(hideBin(process.argv)).argv;
 const attack = async () => {
   try {
-    const status = await requestHttp(argv.url || argv._[0], argv.method || argv.X || "GET");
+    let url = argv.url || argv._[0];
+    
+    // if argv.url or argv._[0] not start with http or https, add http
+    if (!url.startsWith("http") && !url.startsWith("https")) {
+      url = `https://${url}`;
+    }
+
+    console.log(url);
+    const status = await requestHttp(url, argv.method || argv.X || "GET");
     responses[status.status] = responses[status.status] + 1 || 1;
   } catch (error) {
     responses[error.status] = responses[error.status] + 1 || 1;
@@ -71,5 +79,5 @@ const onExit = () => {
 
 process.on("SIGINT", onExit);
 
-const interval = argv.interval || argv.i || 1000;
+const interval = argv.interval || argv.i || 1;
 setInterval(attack, interval * 1000 || 1000);
