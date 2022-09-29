@@ -1,10 +1,10 @@
 {
-  "name": "up",
+  "name": "hoch",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "up ": "./index.js"
+    "hoch ": "./index.js"
   },
   "scripts": {
     "test": "jest"
