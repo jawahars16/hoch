@@ -61,7 +61,7 @@ const attack = async () => {
 
     // if argv.url or argv._[0] not start with http or https, add http
     if (!url.startsWith("http") && !url.startsWith("https")) {
-      url = `https://${url}`;
+      url = `http://${url}`;
     }
 
     const status = await requestHttp(url, argv.method || argv.X || "GET");
