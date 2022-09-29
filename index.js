@@ -58,13 +58,12 @@ const argv = yargs(hideBin(process.argv)).argv;
 const attack = async () => {
   try {
     let url = argv.url || argv._[0];
-    
+
     // if argv.url or argv._[0] not start with http or https, add http
     if (!url.startsWith("http") && !url.startsWith("https")) {
       url = `https://${url}`;
     }
 
-    console.log(url);
     const status = await requestHttp(url, argv.method || argv.X || "GET");
     responses[status.status] = responses[status.status] + 1 || 1;
   } catch (error) {
